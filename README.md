@@ -77,13 +77,20 @@ make
 三、拷贝ServerStatus/status到你的网站目录        
 例如：
 ```
-sudo cp -r ServerStatus/web/* /home/wwwroot/default
+sudo cp -r ServerStatus/web/* /var/www/html/server-status
 ```
 
 四、运行服务端：             
 web-dir参数为上一步设置的网站根目录，务必修改成自己网站的路径   
 ```
-./sergate --config=config.json --web-dir=/home/wwwroot/default   
+./sergate --config=config.json --web-dir=/var/www/html/server-status   
+```
+
+五、访问管理页面：
+访问路径及端口为自己web服务器的地址：本机的apache或nginx等
+```
+启动本机apache :service httpd start
+访问管理页面：http://localhost
 ```
 
 【客户端配置】（客户端程序在ServerStatus/clients下）：          
